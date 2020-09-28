@@ -1,0 +1,35 @@
+﻿<Window x:Class="BnS_EffectRemover.DownloadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BnS_EffectRemover"
+        mc:Ignorable="d"
+        Title="BnS_EffectRemover: DownloadWindow" Height="160" Width="480"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <TextBlock FontFamily="Roboto" FontSize="18" HorizontalAlignment="Stretch" Margin="5,5,0,0">
+                <Run Text="Downloading new version in:"></Run>
+                <LineBreak/>
+                <Run Name="TBR_path" FontSize="15" Text="path" Foreground="LightBlue" MouseUp="TBR_path_MouseUp"></Run>
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" Height="40" Margin="0,25,0,0">
+                <ProgressBar Name="ProgressBar" Height="15" Width="300" Margin="10,0,0,0" Value="0"></ProgressBar>
+                <TextBlock FontFamily="Roboto" Margin="5,0,0,0" Height="15" Width="50">
+                    <Run Name="TBR_percentage" Text="0"></Run>
+                    <Run Text="%"></Run>
+                </TextBlock>
+                <Button Name="BT_done" Margin="3,0,0,0" Height="30" Width="80" Content="Done" IsEnabled="False" Click="Button_Click"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

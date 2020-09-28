@@ -1,0 +1,171 @@
+﻿<Window x:Class="BnS_EffectRemover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BnS_EffectRemover"
+        Title="BnS_EffectRemover v1.1 (by Daniel)" Height="500" Width="900"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen" Initialized="StatusCheck">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.07*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17" FontFamily="Roboto" Content="Welcome to BnS effect remover"></Label>
+        <Label Name="LB_status" Content="Status: website not reachable"  VerticalContentAlignment="Top" FontSize="10" FontFamily="Roboto" Grid.Row="0" Foreground="Yellow"></Label>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" MouseUp="donateNow">
+            <Image Source="Images\pp.png" Width="50" HorizontalAlignment="Right" Grid.RowSpan="1" />
+            <Label Content="Donate now" VerticalContentAlignment="Center" FontFamily="Roboto" FontWeight="Bold" Margin="-10,0,0,0"></Label>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.55*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Name="MainStackPanel" Grid.Column="0" Orientation="Vertical">
+                    <Grid Name="Effets_grid">
+                        <StackPanel>
+                            <Label Content="Effects" FontFamily="Roboto" ></Label>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox  Name="CB_All" Content="All" FontFamily="Roboto" Checked="SA_checkbox" Unchecked="SA_checkbox"/>
+                                <CheckBox Name="CB_otherSFX" Content="Other SFX" FontFamily="Roboto" Margin="10,0,0,0"></CheckBox>
+                                <CheckBox Name="CB_Sounds" Content="Sounds" FontFamily="Roboto" Margin="10,0,0,0"></CheckBox>
+                                <CheckBox Name="CB_DMG" Content="DMG text" FontFamily="Roboto" Margin="10,0,0,0"></CheckBox>
+
+                            </StackPanel>
+                            <Separator></Separator>
+                            <!-- Effects -->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Vertical" Grid.Column="0">
+                                    <CheckBox Name="CB_Assassin" Content="Assassin" FontFamily="Roboto" Margin="0,5,0,0"></CheckBox>
+                                    <CheckBox Name="CB_BM" Content="Blade Master" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_BD" Content="Blade Dancer" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Destro" Content="Destroyer" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Summ" Content="Summoner" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_FM" Content="Force Master" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_SF" Content="Soul Fighter" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Archer" Content="Archer" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Warden" Content="Warden" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Warlock" Content="Warlock" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_KFM" Content="Kung Fu Master" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Gunner" Content="Gunslinger" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Astromancer" Content="Astromancer" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
+                                    <CheckBox Name="CB_Assasin_3RD" Content="Assassin 3rd spec" FontFamily="Roboto" Margin="0,5,0,0"></CheckBox>
+                                    <CheckBox Name="CB_Destroyer_3RD" Content="Destroyer 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_BM_3RD" Content="Blade Master 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_FM_3RD" Content="Force Master 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_KFM_3RD" Content="Kung Fu Master 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                    <Separator Margin="0,5,0,1"></Separator>
+                    <!-- Animation-->
+                    <Grid Name="Animation_grid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+                            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
+                                <Label Content="Animation" FontFamily="Roboto" Grid.Row="0"></Label>
+                                <CheckBox Margin="5,0,0,0" Name="CB_All_ANI" Content="Select all animations" FontFamily="Roboto" Checked="SA_ANI_checkbox" Unchecked="SA_ANI_checkbox"/>
+                            </StackPanel>
+                            <Separator></Separator>
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Grid.Row="1">
+                            <CheckBox Name="CB_Assassin_ANI" Content="Assassin" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_Summoner_ANI" Content="Summoner" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_KFM_ANI" Content="Kung Fu Master" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_Gunner_ANI" Content="Gunslinger" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_Destro_ANI" Content="Destroyer" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_Warden_ANI" Content="Warden" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_Archer_ANI" Content="Archer" FontFamily="Roboto"></CheckBox>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Grid.Row="1">
+                            <CheckBox Name="CB_FM_ANI" Content="Force Master" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_FM_3RD_ANI" Content="Force Master 3RD" FontFamily="Roboto" Margin="0,3,0,0">
+                                <ToolTipService.ToolTip >
+                                    <ToolTip Content="(this will remove animation + some effects)"/>
+                                </ToolTipService.ToolTip>
+                            </CheckBox>
+                            <CheckBox Name="CB_BM_ANI" Content="Blade Master" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_BD_ANI" Content="Blade Dancer" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_Warlock_ANI" Content="Warlock" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_SF_ANI" Content="Soul Fighter" FontFamily="Roboto"></CheckBox>
+                        </StackPanel>
+                    </Grid>
+                    <Separator Margin="0,5,0,1"></Separator>
+                    <!-- Dummy mode-->
+                    <Grid Name="DummyMode_grid">
+                        <StackPanel>
+                            <Label Content="Dummy mode animation" FontFamily="Roboto">
+                                <ToolTipService.ToolTip >
+                                    <ToolTip Content="This will make the character of the class stand like a dummy"/>
+                                </ToolTipService.ToolTip>
+                            </Label>
+                            <CheckBox Name="CB_Destro_Dummy" Content="Destroyer dummy mode" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                            <CheckBox Name="CB_FM_Dummy" Content="Force Master dummy mode" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="RAM cache cleaner every" Margin="10,0,0,0"></Label>
+                    <ComboBox Name="CB_Cmins"  Width="80" Margin="15,0,0,0">
+                        <ComboBoxItem Tag="10" Content="10 mins" Foreground="White" IsSelected="True"></ComboBoxItem>
+                        <ComboBoxItem Tag="15" Content="15 mins" Foreground="White"></ComboBoxItem>
+                        <ComboBoxItem Tag="20" Content="20 mins" Foreground="White"></ComboBoxItem>
+                        <ComboBoxItem Tag="25" Content="25 mins" Foreground="White"></ComboBoxItem>
+                        <ComboBoxItem Tag="30" Content="30 mins" Foreground="White"></ComboBoxItem>
+                    </ComboBox>
+                    <ToggleButton Name="SW_cache" Style="{StaticResource MaterialDesignSwitchToggleButton}" ToolTip="If you close the program the RAM cache cleaner will stop" Margin="15,0,0,0" Checked="SW_CacheCleaner" Unchecked="SW_CacheCleaner" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="30" Margin="0,40,0,0">
+                    <TextBlock Name="Backup_folder" Margin="2,0,0,0" Width="500" Text="Browse BnS patch backup folder" FontFamily="Roboto" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" MouseUp="tbBrowseOpenDialog"/>
+                    <Button x:Name="Backup_button" HorizontalAlignment="Right" Content="Browse" VerticalContentAlignment="Center" Click="_Click" Height="30" FontSize="15" Width="82" Margin="-15,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="30" Margin="0,20,0,0">
+                    <TextBlock Name="CoockedPC_folder" Margin="2,0,0,0" Width="500" Text="Browse BnS CookedPC folder" FontFamily="Roboto" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" MouseUp="tbBrowseOpenDialog"></TextBlock>
+                    <Button Name="CoockedPC_button" HorizontalAlignment="Right" Content="Browse" VerticalContentAlignment="Center" Click="_Click" Height="30" FontSize="15" Width="82" Margin="-15,0,0,0"></Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Left">
+                    <Button Name="Restore" Content="Restore effects" Margin="5,0,0,0" Click="_ClickFunctions"></Button>
+                    <Button Name="Remove" Content="Remove from game" Margin="5,0,0,0" Click="_ClickFunctions"></Button>
+                    <Button Name="Add" Content="Add to game" Margin="5,0,0,0" Click="_ClickFunctions"></Button>
+                </StackPanel>
+                <Border Name="ConsoleBorder" BorderThickness="1" BorderBrush="White" Margin="0,5,0,0" Height="235">
+                    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <ScrollViewer  Name="SV_console" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <TextBlock Name="TB_console" Foreground="White" FontFamily="Roboto" Margin="5,5,0,0" >
+                                    Welcome to BnS effect remover, this program was made by DaNiEl#3285 (discord). <LineBreak></LineBreak> Thanks for using it! <LineBreak></LineBreak>
+                            </TextBlock>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
