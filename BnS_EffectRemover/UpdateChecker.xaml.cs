@@ -1,6 +1,7 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -21,24 +22,12 @@ namespace BnS_EffectRemover
     /// </summary>
     public partial class UpdateChecker : Window
     {
-        RepositoryInfo folders;
-        public UpdateChecker(RepositoryInfo folders)
+        Window mainwindow;
+        public UpdateChecker(Window mainwindow)
         {
-            this.folders = folders;
+            this.mainwindow = mainwindow;
             this.ResizeMode = ResizeMode.CanMinimize;
             InitializeComponent();
-            
-            if (string.IsNullOrEmpty(folders.update_Download_Path))
-            {
-                TBR_path.Text = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                TBR_path.ToolTip = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            }
-            else
-            {
-                TBR_path.Text = folders.update_Download_Path;
-                TBR_path.ToolTip = folders.update_Download_Path;
-            }
-            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,29 +36,13 @@ namespace BnS_EffectRemover
             switch (bt.Name.ToString())
             {
                 case "BT_yes":
-                    DownloadWindow dw = new DownloadWindow(TBR_path.Text);
-                    this.Hide();
-                    dw.ShowDialog();
-                    this.Close();
+                    Process.Start("BnS_EffectRemover_Updater.exe");
                     break;
                 case "BT_no":
+                    mainwindow.Show();
                     this.Close();
                     break;
             }
         }
-
-        private void Run_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = @"C:\";
-            dialog.IsFolderPicker = true;
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
-            {
-                TBR_path.Text = dialog.FileName;
-                folders.update_Download_Path = dialog.FileName;
-                GestioneFileXML.ScriviXml(folders);
-            }
-        }
-
     }
 }

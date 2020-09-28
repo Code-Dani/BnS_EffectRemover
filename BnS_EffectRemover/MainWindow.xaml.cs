@@ -20,13 +20,13 @@ using System.Diagnostics;
 using Microsoft.WindowsAPICodePack.Shell.Interop;
 using MaterialDesignThemes.Wpf;
 using System.Threading;
-using CG.Web.MegaApiClient;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Security.Policy;
 using System.Windows.Threading;
 using System.Web.Caching;
 using System.Windows.Controls.Primitives;
+using Octokit;
 
 namespace BnS_EffectRemover
 {
@@ -566,29 +566,50 @@ namespace BnS_EffectRemover
         }
         private void StatusCheck(object sender, EventArgs e)
         {
-            var client = new MegaApiClient();
-            client.LoginAnonymous();
-            MegaConnect task = new MegaConnect(client);
-            Thread StatusChecker = new Thread(new ThreadStart(task.StatusCheck));
-            StatusChecker.Start();
-            StatusChecker.Join();
-            List<INode> items = task.items;
-            if (items != null)
-            {
-                if (items[2].Name == this.Title + ".zip")
-                {
-                    LB_status.Content = "Status: version up to date";
-                    LB_status.Foreground = new SolidColorBrush(Colors.Green);
+            this.Hide();
+            UpdateChecker upc = new UpdateChecker(this);
+            bool check = true;
+            Task.Run(async () => { 
+                check = await checkLatestVersion();
+                if (check == false) {
+                    await upc.Dispatcher.BeginInvoke((Action)(() =>
+                    {
+                        upc.ShowDialog();
+                    }));
                 }
                 else
                 {
-                    LB_status.Content = "Status: version outdated";
-                    LB_status.Foreground = new SolidColorBrush(Colors.Red);
-                    UpdateChecker upc = new UpdateChecker(folders);
-                    upc.ShowDialog();
+                    this.Show();
+                }
+            });
+        }
+        public async Task<bool> checkLatestVersion()
+        {
+            var client = new GitHubClient(new ProductHeaderValue("Code-Dani"));
+            var releases = await client.Repository.Release.GetLatest("Code-Dani", "BnS_EffectRemover");
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
+            if (releases != null)
+            {
+                if (releases.TagName == fvi.FileVersion)
+                {
+                    await LB_status.Dispatcher.BeginInvoke((Action)(() =>
+                    {
+                        LB_status.Content = "Status: version up to date";
+                        LB_status.Foreground = new SolidColorBrush(Colors.Green);
+                    }));
+                }
+                else
+                {
+                    await LB_status.Dispatcher.BeginInvoke((Action)(() =>
+                    {
+                        LB_status.Content = "Status: version outdated";
+                        LB_status.Foreground = new SolidColorBrush(Colors.Red);
+                    }));
+                    return false;
                 }
             }
-            client.Logout();
+            return true;
         }
         public void CheckBoxOperations(string[] files, string[] Class_Upks, string folderPath, string consoleText)
         {

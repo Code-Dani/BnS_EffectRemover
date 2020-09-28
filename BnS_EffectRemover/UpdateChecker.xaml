@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BnS_EffectRemover"
         mc:Ignorable="d"
-        Title="BnS_EffectRemover: Newer version found" Height="250" Width="460"
+        Title="BnS_EffectRemover: Newer version found" Height="200" Width="460"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -17,16 +17,7 @@
         WindowStartupLocation="CenterScreen"
         >
     <Grid>
-        <TextBlock  Margin="10,10,0,0" FontSize="20" Height="65" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Roboto" FontStyle="Normal">There's a newer version available,<LineBreak/> do you want to download it now?</TextBlock>
-        <TextBlock Margin="10,75,10,0" FontSize="15" Height="65" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontFamily="Roboto" FontStyle="Normal">
-            <Run Text="The new version will be downloaded in this folder:" ToolTip="Something that would probably be the path"></Run>
-            <LineBreak/>
-            <Run Name="TBR_path" FontSize="12" Text="Something that would probably be the path"></Run>
-            <LineBreak/>
-            <Run Text="(click"></Run>
-            <Run Text="HERE" FontWeight="Bold" Foreground="LightBlue" MouseUp="Run_MouseUp"></Run>
-            <Run Text="to modify)"></Run>
-        </TextBlock>
+        <TextBlock  Margin="10,20,0,0" FontSize="20" Height="65" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Roboto" FontStyle="Normal">There's a newer version available,<LineBreak/> do you want to download it now?</TextBlock>
         <StackPanel Margin="0,0,0,25" VerticalAlignment="Bottom" Height="35" HorizontalAlignment="Center" Orientation="Horizontal">
             <Button IsDefault="True" Name="BT_yes" Content="Yes" Width="110" Height="30" Click="Button_Click"></Button>
             <Button IsCancel="True" Name="BT_no" Margin="50,0,0,0" Content="No" Width="110" Height="30" Click="Button_Click"></Button>

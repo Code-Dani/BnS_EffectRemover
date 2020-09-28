@@ -11,7 +11,7 @@ namespace BnS_EffectRemover
         public string backup_folder { get; set; }
         public string coockedPC_folder { get; set; }
         public string coockedPC_eng_folder { get; set; }
-        public string update_Download_Path { get; set; }
+        public string update_Download_Path { get; set; }    //not being used anymore
         public RepositoryInfo(string backup_folder, string coockedPC_folder, string coockedPC_eng_folder)
         {
             this.backup_folder = backup_folder;
