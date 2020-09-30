@@ -53,17 +53,17 @@ Where can i find CoockedPC folder?
 Does this program work for both 32bit and 64bit?
 >Yes it does.
 
-# Known things:
+### Known things:
 >MalwareBytes might targets this program as a 0-day malware, this program is totally safe, the reason why it gets targeted is just to prevent possible 0-day attacks.
 
-# VirusTotal:
+### VirusTotal:
 >https://www.virustotal.com/gui/file/70a68bca43e5019a87a5b56b56209fa799e16e2436a2ee25a43abcdb1160ea01/detection
 
-# GitHub:
+### GitHub:
 >https://github.com/Code-Dani/BnS_EffectRemover.git
 
 
-# Used packages: 
+### Used packages: 
   * https://www.nuget.org/packages/Octokit/
   * https://www.nuget.org/packages/MaterialDesignThemes/3.2.1-ci1990
   * https://www.nuget.org/packages/Costura.Fody/5.0.0-alpha0281
