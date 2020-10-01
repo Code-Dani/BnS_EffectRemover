@@ -579,7 +579,14 @@ namespace BnS_EffectRemover
                 }
                 else
                 {
-                    this.Show();
+                    await this.Dispatcher.BeginInvoke((Action)(() =>
+                    {
+                        this.Show();
+                    }));
+                    await upc.Dispatcher.BeginInvoke((Action)(() =>
+                    {
+                        upc.Close();
+                    }));
                 }
             });
         }

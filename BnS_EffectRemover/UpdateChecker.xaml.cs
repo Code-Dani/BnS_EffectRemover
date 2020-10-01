@@ -44,5 +44,10 @@ namespace BnS_EffectRemover
                     break;
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            mainwindow.Show();
+        }
     }
 }
