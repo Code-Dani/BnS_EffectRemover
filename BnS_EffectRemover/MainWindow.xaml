@@ -113,6 +113,7 @@
                             <CheckBox Name="CB_BD_ANI" Content="Blade Dancer" FontFamily="Roboto"></CheckBox>
                             <CheckBox Name="CB_Warlock_ANI" Content="Warlock" FontFamily="Roboto"></CheckBox>
                             <CheckBox Name="CB_SF_ANI" Content="Soul Fighter" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_Astro_ANI" Content="Astromancer" FontFamily="Roboto"></CheckBox>
                         </StackPanel>
                     </Grid>
                     <Separator Margin="0,5,0,1"></Separator>

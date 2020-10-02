@@ -126,11 +126,12 @@ namespace BnS_EffectRemover
             checkboxStateDict.Add("Destroyer_3RD", (bool)CB_Destroyer_3RD.IsChecked);
             checkboxStateDict.Add("FM_3RD", (bool)CB_FM_3RD.IsChecked);
             checkboxStateDict.Add("KFM_3RD", (bool)CB_KFM_3RD.IsChecked);
-            checkboxStateDict.Add("Destro_Dummy", (bool)CB_Destro_Dummy.IsChecked);
-            checkboxStateDict.Add("FM_Dummy", (bool)CB_FM_Dummy.IsChecked);
             checkboxStateDict.Add("FM_3RD_ANI", (bool)CB_FM_3RD_ANI.IsChecked);
             checkboxStateDict.Add("Astromancer", (bool)CB_Astromancer.IsChecked);
-            //
+            //Dummy Mode
+            checkboxStateDict.Add("Destro_Dummy", (bool)CB_Destro_Dummy.IsChecked);
+            checkboxStateDict.Add("FM_Dummy", (bool)CB_FM_Dummy.IsChecked);
+            //Animation
             checkboxStateDict.Add("CB_Assassin_ANI", (bool)CB_Assassin_ANI.IsChecked);
             checkboxStateDict.Add("CB_Summoner_ANI", (bool)CB_Summoner_ANI.IsChecked);
             checkboxStateDict.Add("CB_KFM_ANI", (bool)CB_KFM_ANI.IsChecked);
@@ -143,6 +144,7 @@ namespace BnS_EffectRemover
             checkboxStateDict.Add("CB_BD_ANI", (bool)CB_BD_ANI.IsChecked);
             checkboxStateDict.Add("CB_Warlock_ANI", (bool)CB_Warlock_ANI.IsChecked);
             checkboxStateDict.Add("CB_SF_ANI", (bool)CB_SF_ANI.IsChecked);
+            checkboxStateDict.Add("CB_Astro_ANI", (bool)CB_Astro_ANI.IsChecked);
 
             Thread t1 = new Thread(new ThreadStart(ThreadDoMoving));
             t1.Name = "Effect Remover thread";
@@ -347,6 +349,10 @@ namespace BnS_EffectRemover
                             {
                                 CheckBoxOperations(files, Class_UPK_s.SF_ANI, folders.backup_folder, "<< Soul Fighter animation:");
                             }
+                            if (checkboxStateDict["CB_Astro_ANI"] == true)
+                            {
+                                CheckBoxOperations(files, Class_UPK_s.Astronmancer_ANI, folders.backup_folder, "<< Astromancer animation:");
+                            }
 
                         }
                         break;     
@@ -504,6 +510,10 @@ namespace BnS_EffectRemover
                             if (checkboxStateDict["CB_SF_ANI"] == true)
                             {
                                 CheckBoxOperations(files, Class_UPK_s.SF_ANI, folders.coockedPC_folder, ">> Soul Fighter animation:");
+                            }
+                            if (checkboxStateDict["CB_Astro_ANI"] == true)
+                            {
+                                CheckBoxOperations(files, Class_UPK_s.Astronmancer_ANI, folders.coockedPC_folder, ">> Astromancer animation:");
                             }
                         }
                         break;
@@ -731,6 +741,7 @@ namespace BnS_EffectRemover
                     CB_Warlock_ANI.IsChecked = true;
                     CB_SF_ANI.IsChecked = true;
                     CB_Archer_ANI.IsChecked = true;
+                    CB_Astro_ANI.IsChecked = true;
                     break;
                 case "False":
                     CB_Assassin_ANI.IsChecked = false;
@@ -746,6 +757,7 @@ namespace BnS_EffectRemover
                     CB_Warlock_ANI.IsChecked = false;
                     CB_SF_ANI.IsChecked = false;
                     CB_Archer_ANI.IsChecked = false;
+                    CB_Astro_ANI.IsChecked = false;
                     break;
             }
         }

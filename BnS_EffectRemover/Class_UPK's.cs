@@ -8,6 +8,7 @@ namespace BnS_EffectRemover
 {
     public static class Class_UPK_s
     {
+        //Class Effects
         public static string[] Archer = { "00064738.upk", "00068166.upk" };
         public static string[] Assassin = { "00010504.upk", "00060553.upk"};
         public static string[] Assassin_3RD = { "00069254.upk" };
@@ -16,10 +17,8 @@ namespace BnS_EffectRemover
         public static string[] BD = { "00031769.upk", "00060555.upk" };
         public static string[] Destro = { "00008841.upk", "00060551.upk" };
         public static string[] Destro_3RD = { "00067307.upk" };
-        public static string[] Destro_Dummy = { "00068515.upk" };
         public static string[] FM = { "00009801.upk", "00060550.upk" };
         public static string[] FM_3RD = { "00072638.upk"};
-        public static string[] FM_Dummy = { "00068626.upk" };
         public static string[] Warden = { "00056127.upk", "00060558.upk" };
         public static string[] Warlock = { "00023411.upk", "00023412.upk", "00060556.upk", "00060729.upk" };
         public static string[] KFM = { "00010771.upk", "00060549.upk"};
@@ -32,7 +31,11 @@ namespace BnS_EffectRemover
         public static string[] DMG = { "00010081.upk" };
         public static string[] Astromancer = { "00072639.upk", "00072642.upk" };
 
-        //BnS buddy animation
+        //Dumy mode
+        public static string[] FM_Dummy = { "00068626.upk" };
+        public static string[] Destro_Dummy = { "00068515.upk" };
+
+        //Class animations
         public static string[] Assassin_ANI = { "00007916.upk" , "00068516.upk" };
         public static string[] Summoner_ANI = { "00007917.upk" , "00056573.upk" };
         public static string[] KFM_ANI = { "00007912.upk" , "00056568.upk" , "00064820.upk" };
@@ -40,12 +43,13 @@ namespace BnS_EffectRemover
         public static string[] Destro_ANI = { "00007914.upk" , "00056570.upk"};
         public static string[] Warden_ANI = { "00056126.upk" , "00056566.upk" , "00056577.upk"};
         public static string[] FM_ANI = { "00007913.upk" , "00056569.upk" };
-        public static string[] FM_3RD_ANI = { "00068628.upk" }; /* TEMP FIELD TILL BNS BUDDY STARTS HANDLING IT */
+        public static string[] FM_3RD_ANI = { "00068628.upk" }; 
         public static string[] BM_ANI = { "00007911.upk" , "00056567.upk" };
         public static string[] BD_ANI = { "00018601.upk" , "00056574.upk"};
         public static string[] Warlock_ANI = { "00023439.upk" , "00056575.upk"};
         public static string[] SF_ANI = { "00034408.upk" , "00056572.upk" , "00056576.upk"};
         public static string[] Archer_ANI = { "00064736.upk" };
+        public static string[] Astronmancer_ANI = { "00076159.upk", "00069237.upk", "00069238.upk" };
         
     }
 }
