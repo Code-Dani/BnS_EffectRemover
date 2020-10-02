@@ -31,7 +31,7 @@ namespace BnS_EffectRemover
         public static string[] DMG = { "00010081.upk" };
         public static string[] Astromancer = { "00072639.upk", "00072642.upk" };
 
-        //Dumy mode
+        //Dummy mode
         public static string[] FM_Dummy = { "00068626.upk" };
         public static string[] Destro_Dummy = { "00068515.upk" };
 
