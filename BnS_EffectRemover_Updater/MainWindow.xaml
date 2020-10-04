@@ -1,0 +1,48 @@
+﻿<Window x:Class="BnS_EffectRemover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BnS_EffectRemover"
+        mc:Ignorable="d"
+        Title="BnS: Effect Remover Updater" Height="350" Width="600"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <StackPanel Orientation="Vertical" Height="180" VerticalAlignment="Top">
+            <TextBlock FontFamily="Roboto" FontSize="22" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Run Text="Welcome to the BnS: Effect Remover updater"></Run>
+            </TextBlock>
+            <TextBlock FontSize="18" Margin="5,20,0,0" FontFamily="Roboto">
+                <Run Text="Download status:"></Run>
+                <Run Name="TBR_download" Text="downloading" Foreground="Red"></Run>
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" Height="40" Margin="5,3,0,0">
+                <ProgressBar Name="ProgressBar" Height="15" Width="300" Margin="0,0,0,0" Value="0"></ProgressBar>
+                <TextBlock FontFamily="Roboto" Margin="5,0,0,0" Height="15" Width="50">
+                    <Run Name="TBR_percentage" Text="0"></Run>
+                    <Run Text="%"></Run>
+                </TextBlock>
+            </StackPanel>
+            <TextBlock FontSize="18" Margin="5,20,0,0" FontFamily="Roboto">
+                <Run Text="Installation status:"></Run>
+                <Run Name="TBR_installation" Text="waiting for the download to complete" Foreground="Yellow"></Run>
+            </TextBlock>
+        </StackPanel>
+        <Border Name="ConsoleBorder" BorderThickness="1" BorderBrush="White" Height="120" VerticalAlignment="Bottom">
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <ScrollViewer  Name="SV_console" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock Name="TB_console" Foreground="White" FontFamily="Roboto" Margin="5,5,0,0" >
+                        Welcome to BnS effect remover, this program was made by DaNiEl#3285 (discord). <LineBreak></LineBreak> Thanks for using it! <LineBreak></LineBreak>
+                    </TextBlock>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

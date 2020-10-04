@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BnS_EffectRemover", "BnS_EffectRemover\BnS_EffectRemover.csproj", "{324088E7-DE26-4E63-AE9E-216DE45967D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BnS_EffectRemover_Updater", "..\BnS_EffectRemover_Updater\BnS_EffectRemover_Updater\BnS_EffectRemover_Updater.csproj", "{AFE0432A-4D6D-4A58-9A37-4644B1290A93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BnS_EffectRemover_Updater", "BnS_EffectRemover_Updater\BnS_EffectRemover_Updater.csproj", "{AFE0432A-4D6D-4A58-9A37-4644B1290A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
