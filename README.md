@@ -59,7 +59,7 @@ Does this program work for both 32bit and 64bit?
 >MalwareBytes might targets this program as a 0-day malware, this program is totally safe, the reason why it gets targeted is just to prevent possible 0-day attacks.
 
 ### VirusTotal:
->https://www.virustotal.com/gui/file/70a68bca43e5019a87a5b56b56209fa799e16e2436a2ee25a43abcdb1160ea01/detection
+>https://www.virustotal.com/gui/file/fa80a461d1a36c8970093dae0d3ecb5fed759d070718f67df3be5a56b71ca60a/detection
 
 ### GitHub:
 >https://github.com/Code-Dani/BnS_EffectRemover.git
