@@ -42,6 +42,8 @@ For more info or clarifications you can contact me on discord: (DaNiEl#3285).
 	>Added a progress bar when downloading an update.
   * Version 1.2:
 	>Completely renew the update system, now it install itself
+  * Version 1.3:
+	>>Program is now able to remove Astromancer animations
 
 ### Possible questions:
 Why does it need administrator privilegies?
