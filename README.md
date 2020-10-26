@@ -44,7 +44,8 @@ For more info or clarifications you can contact me on discord: (DaNiEl#3285).
 	* Completely renew the update system, now it install itself
   * Version 1.3:
 	* Program is now able to remove Astromancer animations
-
+  * Version 1.4:
+	* Fixed major bug causing some upk to get deleted
 ### Possible questions:
 Why does it need administrator privilegies?
 >It does need it to prevent possible errors that may come if the selected folder path require admin power level.
