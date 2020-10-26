@@ -135,7 +135,6 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="RAM cache cleaner every" Margin="10,0,0,0"></Label>
                     <ComboBox Name="CB_Cmins"  Width="80" Margin="15,0,0,0">
-                        <ComboBoxItem Tag="5" Content="5 mins" Foreground="White"></ComboBoxItem>
                         <ComboBoxItem Tag="10" Content="10 mins" Foreground="White" IsSelected="True"></ComboBoxItem>
                         <ComboBoxItem Tag="15" Content="15 mins" Foreground="White"></ComboBoxItem>
                         <ComboBoxItem Tag="20" Content="20 mins" Foreground="White"></ComboBoxItem>
