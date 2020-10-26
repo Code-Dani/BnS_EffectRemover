@@ -82,12 +82,10 @@ namespace BnS_EffectRemover
                 Console.WriteLine("\n\n\n" + er.Message);
             }
         }
-
         private void Wb_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             installLatestUpdate();
         }
-
         public void UpdateBar(int value)
         {
             ProgressBar.Dispatcher.BeginInvoke((Action)(() =>
@@ -99,7 +97,6 @@ namespace BnS_EffectRemover
                 TBR_percentage.Text = ((int)value).ToString();
             }));
         }
-
         public void installLatestUpdate()
         {
             string startANDdestinationPath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);

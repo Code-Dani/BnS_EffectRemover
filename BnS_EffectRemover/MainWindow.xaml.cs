@@ -57,9 +57,7 @@ namespace BnS_EffectRemover
                     folders.coockedPC_eng_folder = folders.coockedPC_folder + @"\..\..\Local\NCWEST\ENGLISH\CookedPC";
                     GestioneFileXML.ScriviXml(folders);
                 }
-                
             }
-            
         }
 
         //manage the path textblock
@@ -146,6 +144,9 @@ namespace BnS_EffectRemover
             checkboxStateDict.Add("CB_SF_ANI", (bool)CB_SF_ANI.IsChecked);
             checkboxStateDict.Add("CB_Astro_ANI", (bool)CB_Astro_ANI.IsChecked);
 
+            Restore.IsEnabled = false;
+            Remove.IsEnabled = false;
+            Add.IsEnabled = false;
             Thread t1 = new Thread(new ThreadStart(ThreadDoMoving));
             t1.Name = "Effect Remover thread";
             t1.Start();
@@ -458,11 +459,6 @@ namespace BnS_EffectRemover
                             {
                                 CheckBoxOperations(files, Class_UPK_s.FM_3RD_ANI, folders.coockedPC_folder, ">> Force Master 3rd animation:");
                             }
-                            //animation
-                            if (checkboxStateDict["FM_3RD_ANI"] == true)
-                            {
-                                CheckBoxOperations(files, Class_UPK_s.FM_3RD_ANI, folders.coockedPC_folder, ">> Force Master 3rd animation:");
-                            }
                             if (checkboxStateDict["CB_Assassin_ANI"] == true)
                             {
                                 CheckBoxOperations(files, Class_UPK_s.Assassin_ANI, folders.coockedPC_folder, ">> Assassin animation:");
@@ -519,6 +515,18 @@ namespace BnS_EffectRemover
                         break;
                 }
             }
+            Add.Dispatcher.BeginInvoke((Action)(() =>
+            {
+                Add.IsEnabled = true;
+            }));
+            Restore.Dispatcher.BeginInvoke((Action)(() =>
+            {
+                Restore.IsEnabled = true;
+            }));
+            Remove.Dispatcher.BeginInvoke((Action)(() =>
+            {
+                Remove.IsEnabled = true;
+            }));
         }
         //manage the "select all" checkbox
         private void SA_checkbox(object sender, RoutedEventArgs e)
@@ -642,7 +650,7 @@ namespace BnS_EffectRemover
                             {
                                 if (File.Exists(System.IO.Path.Combine(folders.backup_folder, System.IO.Path.GetFileName(item))))
                                 {
-                                    File.Delete(System.IO.Path.Combine(folderPath, System.IO.Path.GetFileName(item)));
+                                    File.Delete(System.IO.Path.Combine(folders.backup_folder, System.IO.Path.GetFileName(item)));
                                 }
                             }
                             File.Move(item, System.IO.Path.Combine(folderPath, System.IO.Path.GetFileName(item)));
@@ -663,6 +671,7 @@ namespace BnS_EffectRemover
                     }
                 }
             }
+            
         }
         private void donateNow(object sender, MouseButtonEventArgs e)
         {
