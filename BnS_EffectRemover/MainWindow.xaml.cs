@@ -112,6 +112,7 @@ namespace BnS_EffectRemover
             checkboxStateDict.Add("Archer", (bool)CB_Archer.IsChecked);
             checkboxStateDict.Add("Assassin", (bool)CB_Assassin.IsChecked);
             checkboxStateDict.Add("BD", (bool)CB_BD.IsChecked);
+            checkboxStateDict.Add("BD_3RD", (bool)CB_BD_3RD.IsChecked);
             checkboxStateDict.Add("BM", (bool)CB_BM.IsChecked);
             checkboxStateDict.Add("Destro", (bool)CB_Destro.IsChecked);
             checkboxStateDict.Add("FM", (bool)CB_FM.IsChecked);
@@ -142,6 +143,7 @@ namespace BnS_EffectRemover
             checkboxStateDict.Add("CB_FM_ANI", (bool)CB_FM_ANI.IsChecked);
             checkboxStateDict.Add("CB_BM_ANI", (bool)CB_BM_ANI.IsChecked);
             checkboxStateDict.Add("CB_BD_ANI", (bool)CB_BD_ANI.IsChecked);
+            checkboxStateDict.Add("CB_BD_3RD_ANI", (bool)CB_BD_3RD_ANI.IsChecked);
             checkboxStateDict.Add("CB_Warlock_ANI", (bool)CB_Warlock_ANI.IsChecked);
             checkboxStateDict.Add("CB_SF_ANI", (bool)CB_SF_ANI.IsChecked);
             checkboxStateDict.Add("CB_Astro_ANI", (bool)CB_Astro_ANI.IsChecked);
@@ -286,6 +288,10 @@ namespace BnS_EffectRemover
                             {
                                 CheckBoxOperations(files, Class_UPK_s.KFM_3RD, folders.backup_folder, "<< Kung Fu Master 3rd:");
                             }
+                            if (checkboxStateDict["BD_3RD"] == true)
+                            {
+                                CheckBoxOperations(files, Class_UPK_s.BD_3RD, folders.backup_folder, "<< Blade Dancer 3rd:");
+                            }
                             if (checkboxStateDict["Astromancer"] == true)
                             {
                                 CheckBoxOperations(files, Class_UPK_s.Astromancer, folders.backup_folder, "<< Astromancer:");
@@ -355,6 +361,10 @@ namespace BnS_EffectRemover
                             if (checkboxStateDict["CB_Astro_ANI"] == true)
                             {
                                 CheckBoxOperations(files, Class_UPK_s.Astronmancer_ANI, folders.backup_folder, "<< Astromancer animation:");
+                            }
+                            if (checkboxStateDict["CB_BD_3RD_ANI"] == true)
+                            {
+                                CheckBoxOperations(files, Class_UPK_s.BD_3RD_ANI, folders.backup_folder, "<< Blade Dancer 3RD animation:");
                             }
 
                         }
@@ -443,6 +453,10 @@ namespace BnS_EffectRemover
                             {
                                 CheckBoxOperations(files, Class_UPK_s.KFM_3RD, folders.coockedPC_folder, ">> Kung Fu Master 3rd:");
                             }
+                            if (checkboxStateDict["BD_3RD"] == true)
+                            {
+                                CheckBoxOperations(files, Class_UPK_s.BD_3RD, folders.coockedPC_folder, ">> Blade Dancer 3rd:");
+                            }
                             if (checkboxStateDict["Astromancer"] == true)
                             {
                                 CheckBoxOperations(files, Class_UPK_s.Astromancer, folders.coockedPC_folder, ">> Astromancer:");
@@ -509,6 +523,10 @@ namespace BnS_EffectRemover
                             {
                                 CheckBoxOperations(files, Class_UPK_s.SF_ANI, folders.coockedPC_folder, ">> Soul Fighter animation:");
                             }
+                            if (checkboxStateDict["CB_BD_3RD_ANI"] == true)
+                            {
+                                CheckBoxOperations(files, Class_UPK_s.BD_3RD_ANI, folders.coockedPC_folder, ">> Blade Dancer 3RD animation:");
+                            }
                             if (checkboxStateDict["CB_Astro_ANI"] == true)
                             {
                                 CheckBoxOperations(files, Class_UPK_s.Astronmancer_ANI, folders.coockedPC_folder, ">> Astromancer animation:");
@@ -530,6 +548,7 @@ namespace BnS_EffectRemover
                 case "True":
                     CB_Assassin.IsChecked = true;
                     CB_BD.IsChecked = true;
+                    CB_BD_3RD.IsChecked = true;
                     CB_BM.IsChecked = true;
                     CB_Destro.IsChecked = true;
                     CB_FM.IsChecked = true;
@@ -553,6 +572,7 @@ namespace BnS_EffectRemover
                 case "False":
                     CB_Assassin.IsChecked = false;
                     CB_BD.IsChecked = false;
+                    CB_BD_3RD.IsChecked = false;
                     CB_BM.IsChecked = false;
                     CB_Destro.IsChecked = false;
                     CB_FM.IsChecked = false;
@@ -739,6 +759,7 @@ namespace BnS_EffectRemover
                     CB_FM_3RD_ANI.IsChecked = true;
                     CB_BM_ANI.IsChecked = true;
                     CB_BD_ANI.IsChecked = true;
+                    CB_BD_3RD_ANI.IsChecked = true;
                     CB_Warlock_ANI.IsChecked = true;
                     CB_SF_ANI.IsChecked = true;
                     CB_Archer_ANI.IsChecked = true;
@@ -755,6 +776,7 @@ namespace BnS_EffectRemover
                     CB_FM_3RD_ANI.IsChecked = false;
                     CB_BM_ANI.IsChecked = false;
                     CB_BD_ANI.IsChecked = false;
+                    CB_BD_3RD_ANI.IsChecked = false;
                     CB_Warlock_ANI.IsChecked = false;
                     CB_SF_ANI.IsChecked = false;
                     CB_Archer_ANI.IsChecked = false;

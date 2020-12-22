@@ -15,6 +15,7 @@ namespace BnS_EffectRemover
         public static string[] BM = { "00010354.upk", "00013263.upk"};
         public static string[] BM_3RD = { "00060548.upk" };
         public static string[] BD = { "00031769.upk", "00060555.upk" };
+        public static string[] BD_3RD = { "00072644.upk", "00072646.upk" };
         public static string[] Destro = { "00008841.upk", "00060551.upk" };
         public static string[] Destro_3RD = { "00067307.upk" };
         public static string[] FM = { "00009801.upk", "00060550.upk" };
@@ -46,6 +47,7 @@ namespace BnS_EffectRemover
         public static string[] FM_3RD_ANI = { "00068628.upk" }; 
         public static string[] BM_ANI = { "00007911.upk" , "00056567.upk" };
         public static string[] BD_ANI = { "00018601.upk" , "00056574.upk"};
+        public static string[] BD_3RD_ANI = { "00078303.upk" + "00078533.upk" };
         public static string[] Warlock_ANI = { "00023439.upk" , "00056575.upk"};
         public static string[] SF_ANI = { "00034408.upk" , "00056572.upk" , "00056576.upk"};
         public static string[] Archer_ANI = { "00064736.upk" };

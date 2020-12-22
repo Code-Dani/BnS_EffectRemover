@@ -71,6 +71,7 @@
                                     <CheckBox Name="CB_BM_3RD" Content="Blade Master 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
                                     <CheckBox Name="CB_FM_3RD" Content="Force Master 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
                                     <CheckBox Name="CB_KFM_3RD" Content="Kung Fu Master 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
+                                    <CheckBox Name="CB_BD_3RD" Content="Blade Dancer 3rd spec" FontFamily="Roboto" Margin="0,3,0,0"></CheckBox>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
@@ -111,6 +112,7 @@
                             </CheckBox>
                             <CheckBox Name="CB_BM_ANI" Content="Blade Master" FontFamily="Roboto"></CheckBox>
                             <CheckBox Name="CB_BD_ANI" Content="Blade Dancer" FontFamily="Roboto"></CheckBox>
+                            <CheckBox Name="CB_BD_3RD_ANI" Content="Blade Dancer 3RD" FontFamily="Roboto"></CheckBox>
                             <CheckBox Name="CB_Warlock_ANI" Content="Warlock" FontFamily="Roboto"></CheckBox>
                             <CheckBox Name="CB_SF_ANI" Content="Soul Fighter" FontFamily="Roboto"></CheckBox>
                             <CheckBox Name="CB_Astro_ANI" Content="Astromancer" FontFamily="Roboto"></CheckBox>
