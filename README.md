@@ -46,6 +46,8 @@ For more info or clarifications you can contact me on discord: (DaNiEl#3285).
 	* Program is now able to remove Astromancer animations
   * Version 1.4:
 	* Fixed major bug causing some upk to get deleted
+  * Version 1.5:
+	* Update to support Blade Dancer 3RD spec animation and effects
 ### Possible questions:
 Why does it need administrator privilegies?
 >It does need it to prevent possible errors that may come if the selected folder path require admin power level.
