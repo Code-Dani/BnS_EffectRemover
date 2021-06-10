@@ -687,7 +687,7 @@ namespace BnS_EffectRemover
         }
         private void donateNow(object sender, MouseButtonEventArgs e)
         {
-            System.Diagnostics.Process.Start();
+            System.Diagnostics.Process.Start("");
         }
         private void SW_CacheCleaner(object sender, RoutedEventArgs e)
         {
