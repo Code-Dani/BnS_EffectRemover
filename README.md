@@ -67,9 +67,6 @@ Does this program work for both 32bit and 64bit?
 ### GitHub:
 >https://github.com/Code-Dani/BnS_EffectRemover.git
 
-### Website:
->http://effect-remover.unaux.com/
-
 ### Used packages: 
   * https://www.nuget.org/packages/Octokit/
   * https://www.nuget.org/packages/MaterialDesignThemes/3.2.1-ci1990
